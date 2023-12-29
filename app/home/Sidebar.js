@@ -79,12 +79,12 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'flex-start',
     padding: 20,
-    backgroundColor: '#2c3e50', // Change this to your desired sidebar color
-    width: '40%', // Fixed 30% width
+    backgroundColor: '#2c3e50', 
+    width: '40%',
     position: 'absolute',
     top: 0,
     bottom: 0,
-    zIndex: 1, // Ensure the sidebar is above other content
+    zIndex: 1, 
   },
   menuIcon: {
     marginBottom: 20,
@@ -118,151 +118,3 @@ const styles = StyleSheet.create({
 });
 
 export default Sidebar;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // Sidebar.js
-// import React from 'react';
-// import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
-// import { useTheme } from '../context/ThemeContext';
-// import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
-
-// function Sidebar({ openSidebarToggle, OpenSidebar, navigation }) {
-//   const { theme } = useTheme();
-//   const iconSize = 24;
-
-//   const navigateToScreen = (screenName) => {
-//     navigation.navigate(screenName);
-//     OpenSidebar(); // Close the sidebar after navigation
-//   };
-
-//   return (
-//     <View style={[styles.sidebar, { backgroundColor: theme.background, color: theme.text }]}>
-//       <ScrollView contentContainerStyle={styles.scrollView}>
-        // <View style={styles.sidebarTitle}>
-        //   <TouchableOpacity onPress={OpenSidebar}>
-        //     <View style={styles.sidebarBrand}>
-        //       <Icon name="chart-line" size={24} color={theme.text} style={styles.iconHeader} />
-        //       <Text style={styles.brandText}>Stock Market</Text>
-        //     </View>
-        //   </TouchableOpacity>
-        //   <TouchableOpacity style={styles.closeIcon} onPress={OpenSidebar}>
-        //     <Text style={styles.closeText}>X</Text>
-        //   </TouchableOpacity>
-        // </View>
-
-//         <View style={styles.sidebarList}>
-//           <TouchableOpacity onPress={() => navigateToScreen('Home')} style={styles.sidebarListItem}>
-//             <Icon name="home" size={iconSize} color={theme.text} style={styles.icon} />
-//             <Text style={styles.listText}>Home</Text>
-//           </TouchableOpacity>
-
-//         <TouchableOpacity onPress={() => navigateToScreen('Dashboard')} style={styles.sidebarListItem}>
-//           <Icon name="archive" size={iconSize} color={theme.text} style={styles.icon} />
-//           <Text style={styles.listText}>Dashboard</Text>
-//         </TouchableOpacity>
-
-      //   <TouchableOpacity onPress={() => navigateToScreen('Stocks')} style={styles.sidebarListItem}>
-      //     <Icon name="grid" size={iconSize} color={theme.text} style={styles.icon} />
-      //     <Text style={styles.listText}>Stock & Fund</Text>
-      //   </TouchableOpacity>
-
-      //   <TouchableOpacity onPress={() => navigateToScreen('Login')} style={styles.sidebarListItem}>
-      //     <Icon name="account" size={iconSize} color={theme.text} style={styles.icon} />
-      //     <Text style={styles.listText}>Login</Text>
-      //   </TouchableOpacity>
-
-      //   <TouchableOpacity onPress={() => navigateToScreen('Register')} style={styles.sidebarListItem}>
-      //     <Icon name="lock" size={iconSize} color={theme.text} style={styles.icon} />
-      //     <Text style={styles.listText}>Register</Text>
-      //   </TouchableOpacity>
-
-      //   <TouchableOpacity onPress={() => navigateToScreen('Charts')} style={styles.sidebarListItem}>
-      //     <Icon name="chart-bar" size={iconSize} color={theme.text} style={styles.icon} />
-      //     <Text style={styles.listText}>Charts</Text>
-      //   </TouchableOpacity>
-
-      //   <TouchableOpacity onPress={() => navigateToScreen('Settings')} style={styles.sidebarListItem}>
-      //     <Icon name="cog" size={iconSize} color={theme.text} style={styles.icon} />
-      //     <Text style={styles.listText}>Settings</Text>
-      //   </TouchableOpacity>
-
-      //   <TouchableOpacity onPress={() => navigateToScreen('Contact')} style={styles.sidebarListItem}>
-      //     <Icon name="email" size={iconSize} color={theme.text} style={styles.icon} />
-      //     <Text style={styles.listText}>Contact Us</Text>
-      //   </TouchableOpacity>
-      // </View>
-//     </ScrollView>
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   sidebar: {
-//     flex: 1,
-//     width: '80%',
-//     paddingTop: 40,
-//   },
-//   scrollView: {
-//     flexGrow: 1,
-//   },
-//   sidebarTitle: {
-//     flexDirection: 'row',
-//     alignItems: 'center',
-//     paddingHorizontal: 20,
-//   },
-//   sidebarBrand: {
-//     flexDirection: 'row',
-//     alignItems: 'center',
-//   },
-//   iconHeader: {
-//     marginRight: 10,
-//   },
-//   brandText: {
-//     fontSize: 18,
-//     fontWeight: 'bold',
-//     color: 'white',
-//   },
-//   closeIcon: {
-//     padding: 10,
-//   },
-//   closeText: {
-//     fontSize: 18,
-//     fontWeight: 'bold',
-//     color: 'white',
-//   },
-//   sidebarList: {
-//     marginTop: 20,
-//     paddingHorizontal: 20,
-//   },
-//   sidebarListItem: {
-//     flexDirection: 'row',
-//     alignItems: 'center',
-//     marginBottom: 20,
-//   },
-//   icon: {
-//     marginRight: 10,
-//   },
-//   listText: {
-//     fontSize: 16,
-//     color: 'white',
-//   },
-// });
-
-// export default Sidebar;

@@ -1,4 +1,3 @@
-// ThemeContext.js
 import React, { createContext, useContext, useState } from 'react';
 
 const ThemeContext = createContext();
@@ -9,8 +8,8 @@ export const useTheme = () => {
 
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState({
-    background: '#282c34', // Set your desired background color
-    text: 'white', // Set your desired text color
+    background: '#282c34', 
+    text: 'white', 
   });
 
   const toggleTheme = () => {

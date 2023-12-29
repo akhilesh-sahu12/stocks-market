@@ -9,13 +9,13 @@ const Header = ({ toggleTheme }) => {
   return (
     <View style={styles.header}>
       <View style={styles.headerLeft}>
-        {/* Add your left side elements here */}
+        {/* Add left side elements here */}
         <TouchableOpacity>
           <Icon name="select-search" size={24} color="white" />
         </TouchableOpacity>
       </View>
       <View style={styles.headerRight}>
-        {/* Add your right side elements here */}
+        {/* Add right side elements here */}
         <TouchableOpacity onPress={toggleTheme} style={styles.icon}>
           <Icon name="brightness-7" size={24} color="white" />
         </TouchableOpacity>
@@ -43,12 +43,12 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 10,
     paddingHorizontal: 16,
-    backgroundColor: '#2c3e50', // Change this to your desired header color
-    width: '70%', // Fixed 70% width
+    backgroundColor: '#2c3e50', 
+    width: '70%', 
     position: 'absolute',
     top: 0,
-    left: '30%', // Align with the right edge of the sidebar
-    zIndex: 0, // Place the header behind the sidebar
+    left: '30%', 
+    zIndex: 0, 
   },
   headerLeft: {
     flexDirection: 'row',

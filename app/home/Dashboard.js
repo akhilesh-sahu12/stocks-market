@@ -3,7 +3,6 @@ import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Card, Title, Paragraph } from 'react-native-paper';
 import { LineChart } from 'react-native-chart-kit';
-import Layout from './Layout';
 
 const Dashboard = () => {
   // Dummy data for the line chart

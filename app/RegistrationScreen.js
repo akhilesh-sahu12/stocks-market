@@ -1,4 +1,3 @@
-// RegistrationScreen.js
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 
@@ -8,14 +7,9 @@ const RegistrationScreen = ({ navigation }) => {
   const [password, setPassword] = useState('');
 
   const handleRegister = () => {
-    // Implement your registration logic here
-    // For simplicity, we'll just log the entered data for now
     console.log('Username:', username);
     console.log('Email:', email);
     console.log('Password:', password);
-    
-    // Navigate to another screen after registration if needed
-    // navigation.navigate('Home');
     navigation.navigate('Login');
   };
 

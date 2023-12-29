@@ -1,4 +1,3 @@
-// LoginScreen.js
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import Layout from './home/Layout'
@@ -8,13 +7,8 @@ const LoginScreen = ({ navigation }) => {
   const [password, setPassword] = useState('');
 
   const handleLogin = () => {
-    // Implement your login logic here
-    // For simplicity, we'll just log the entered data for now
     console.log('Email:', email);
     console.log('Password:', password);
-    
-    // Navigate to another screen after login if needed
-    // navigation.navigate('Home');
   };
 
   return (
