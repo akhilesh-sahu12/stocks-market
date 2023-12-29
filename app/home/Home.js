@@ -1,42 +1,40 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import {
-  Ionicons, 
-} from "@expo/vector-icons";
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons'; // Import Icon from the library
 
 function Home() {
   return (
     <View style={styles.mainContainer}>
       <View style={styles.mainTitle}>
-        <Text style={styles.titleText}>DASHBOARD</Text>
+        <Text style={styles.titleText}>HOME</Text>
       </View>
 
       <View style={styles.mainCards}>
         <View style={styles.card}>
           <View style={styles.cardInner}>
             <Text style={styles.cardText}>Stock</Text>
-            <Ionicons name="md-grid" size={24} color="black" style={styles.cardIcon} />
+            <Icon name="chart-bar" size={24} color="black" style={styles.cardIcon} />
           </View>
           <Text style={styles.cardValue}>1000</Text>
         </View>
         <View style={styles.card}>
           <View style={styles.cardInner}>
             <Text style={styles.cardText}>News</Text>
-            <Ionicons name="md-mail" size={24} color="black" style={styles.cardIcon} />
+            <Icon name="email" size={24} color="black" style={styles.cardIcon} />
           </View>
           <Text style={styles.cardValue}>10</Text>
         </View>
         <View style={styles.card}>
           <View style={styles.cardInner}>
             <Text style={styles.cardText}>Charts</Text>
-            <Ionicons name="md-stats-chart" size={24} color="black" style={styles.cardIcon} />
+            <Icon name="chart-bar" size={24} color="black" style={styles.cardIcon} />
           </View>
           <Text style={styles.cardValue}>5</Text>
         </View>
         <View style={styles.card}>
           <View style={styles.cardInner}>
             <Text style={styles.cardText}>Settings</Text>
-            <Ionicons name="md-settings" size={24} color="black" style={styles.cardIcon} />
+            <Icon name="cog" size={24} color="black" style={styles.cardIcon} />
           </View>
           <Text style={styles.cardValue}>2</Text>
         </View>

@@ -1,56 +1,62 @@
-// Dashboard.js
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { ScrollView,View, StyleSheet } from 'react-native';
 import { Card, Title, Paragraph } from 'react-native-paper';
 import { LineChart } from 'react-native-chart-kit';
 
-const Dashboard = () => {
-  // Dummy data for the line chart
-  const data = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
-    datasets: [
-      {
-        data: [20, 45, 28, 80, 99, 43],
-        color: (opacity = 1) => `rgba(134, 65, 244, ${opacity})`, // purple color
-      },
-    ],
+const Dashboard = ({ sectorData }) => {
+  const renderSectorCards = () => {
+    if (!sectorData || sectorData.length === 0) {
+      return <Text>No data available</Text>;
+    }
+
+    return sectorData.map((sector, index) => (
+      <Card key={index} style={styles.card}>
+        <Card.Content>
+          <Title>{sector.name}</Title>
+          <Paragraph>Performance: {sector.performance}</Paragraph>
+          <Paragraph>Last Updated: {new Date(sector.lastUpdated).toLocaleString()}</Paragraph>
+        </Card.Content>
+      </Card>
+    ));
+  };
+
+  const prepareChartData = () => {
+    if (!sectorData || sectorData.length === 0) {
+      return {
+        labels: [],
+        datasets: [{ data: [] }],
+      };
+    }
+
+    return {
+      labels: sectorData.map((sector) => sector.name),
+      datasets: [
+        {
+          data: sectorData.map((sector) => sector.performance),
+          color: (opacity = 1) => `rgba(134, 65, 244, ${opacity})`,
+        },
+      ],
+    };
   };
 
   return (
     <View style={styles.container}>
-      <Card style={styles.card}>
-        <Card.Content>
-          <Title>Total Sales</Title>
-          <Paragraph>$120,000</Paragraph>
-        </Card.Content>
-      </Card>
-
-      <Card style={styles.card}>
-        <Card.Content>
-          <Title>Orders</Title>
-          <Paragraph>150</Paragraph>
-        </Card.Content>
-      </Card>
-
-      <Card style={styles.card}>
-        <Card.Content>
-          <Title>Users</Title>
-          <Paragraph>5000</Paragraph>
-        </Card.Content>
-      </Card>
+       <Title>Sector Performance</Title>
+      {renderSectorCards()}
 
       <Card style={styles.chartCard}>
         <Card.Content>
-          <Title>Monthly Revenue</Title>
+          <Title>Sector Performance</Title>
+          <ScrollView horizontal>
           <LineChart
-            data={data}
-            width={300}
-            height={200}
+            data={prepareChartData()}
+            width={1000}
+            height={400}
             yAxisLabel="$"
             chartConfig={{
               backgroundGradientFrom: '#fff',
               backgroundGradientTo: '#fff',
-              decimalPlaces: 2,
+              decimalPlaces: 4,
               color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
               labelColor: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`,
               style: {
@@ -64,6 +70,7 @@ const Dashboard = () => {
             }}
             bezier
           />
+          </ScrollView>
         </Card.Content>
       </Card>
     </View>
