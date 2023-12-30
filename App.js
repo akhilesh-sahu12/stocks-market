@@ -4,10 +4,9 @@ import RegistrationScreen from './app/RegistrationScreen';
 import LoginScreen from './app/LoginScreen';
 import Layout from './app/home/Layout'
 import { ThemeProvider } from './app/context/ThemeContext';
-import Dashboard from './app/home/Dashboard.js';
 import DashboardScreen from './app/home/DashboardScreen.js';
 import NewsFetcher from './app/news/NewsFetcher.js';
-import StockDataFetcher from './app/charts/StockDatafetcher.js';
+import StockDataFetcher from './app/charts/StockDataFetcher.js';
 
 const Stack = createStackNavigator();
 
