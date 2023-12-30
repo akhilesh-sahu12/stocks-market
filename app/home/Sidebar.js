@@ -41,7 +41,7 @@ const Sidebar = () => {
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigateToScreen('Stocks')} style={styles.sidebarItem}>
           <Icon name="grid" size={24} color="white" style={styles.icon} />
-          <Text style={styles.sidebarText}>Stock & Fund</Text>
+          <Text style={styles.sidebarText}>Stock & News</Text>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={() => navigateToScreen('Login')} style={styles.sidebarItem}>

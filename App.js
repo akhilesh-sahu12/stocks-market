@@ -6,6 +6,7 @@ import Layout from './app/home/Layout'
 import { ThemeProvider } from './app/context/ThemeContext';
 import Dashboard from './app/home/Dashboard.js';
 import DashboardScreen from './app/home/DashboardScreen.js';
+import NewsFetcher from './app/news/NewsFetcher.js';
 
 
 const Stack = createStackNavigator();
@@ -19,6 +20,7 @@ const App = () => {
         <Stack.Screen name="Dashboard" component={DashboardScreen}/>
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Registration" component={RegistrationScreen} />
+        <Stack.Screen name="Stocks" component={NewsFetcher} />
       </Stack.Navigator>
     </NavigationContainer>
     </ThemeProvider>
