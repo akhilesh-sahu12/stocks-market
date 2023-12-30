@@ -2,9 +2,11 @@
 
 import React from 'react';
 import { View, Text, Image, StyleSheet, Linking } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const NewsList = ({ articles }) => {
   return (
+    <ScrollView>
     <View style={styles.newsList}>
       {articles.map((article) => (
         <View style={styles.newsCard} key={article.uuid}>
@@ -22,31 +24,42 @@ const NewsList = ({ articles }) => {
         </View>
       ))}
     </View>
+    </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
   newsList: {
-    // Add your styles for the container
+    flex: 1,
   },
   newsCard: {
-    // Add your styles for the news card
+    marginBottom: 16,
+    padding: 16,
+    borderRadius: 8,
+    backgroundColor: '#f0f0f0',
   },
   cardImage: {
-    // Add your styles for the card image
+    height: 150,
+    borderRadius: 8,
+    marginBottom: 8,
   },
   cardContent: {
-    // Add your styles for the card content
+    flex: 1,
   },
   cardTitle: {
-    // Add your styles for the card title
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 8,
   },
   cardSummary: {
-    // Add your styles for the card summary
+    fontSize: 14,
+    marginBottom: 8,
   },
   readMoreLink: {
-    // Add your styles for the read more link
+    color: '#3498db',
+    textDecorationLine: 'underline',
   },
 });
+
 
 export default NewsList;

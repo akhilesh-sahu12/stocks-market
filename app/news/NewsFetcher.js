@@ -43,8 +43,11 @@ const NewsFetcher = ({ symbol }) => {
 
 const styles = StyleSheet.create({
   newsFetcherContainer: {
-    // Add your styles for the container
+    flex: 1,
+    padding: 16,
+    backgroundColor: '#fff',
   },
 });
+
 
 export default NewsFetcher;
