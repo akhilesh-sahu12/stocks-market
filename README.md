@@ -101,3 +101,4 @@ Happy coding!
 ## Screenshots
 
 ![App Screenshot](https://github.com/akhilesh-sahu12/stocks-market/blob/master/screenshots/photo1703953331%20(9).jpeg)
+![App Screenshot](https://github.com/akhilesh-sahu12/stocks-market/blob/master/screenshots/photo1703953331%20(7).jpeg)
