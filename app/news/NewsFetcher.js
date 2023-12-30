@@ -14,7 +14,7 @@ const NewsFetcher = ({ symbol }) => {
     const fetchNewsData = async () => {
       try {
         const response = await fetch(
-          `${BASE_URL}/data/core/news/aapl?range=last-week&token=${API_KEY}`
+          `${BASE_URL}/data/core/news/${symbol}?range=last-week&token=${API_KEY}`
         );
         if (!response.ok) {
           throw new Error('Failed to fetch news data');
