@@ -9,12 +9,11 @@ const API_KEY = 'pk_9e697d85bc3446ba8c552b18e85ff4bc';
 
 const NewsFetcher = ({ symbol }) => {
   const [newsData, setNewsData] = useState([]);
-
   useEffect(() => {
     const fetchNewsData = async () => {
       try {
         const response = await fetch(
-          `${BASE_URL}/data/core/news/${symbol}?range=last-week&token=${API_KEY}`
+          `${BASE_URL}/data/core/news/aapl?range=last-week&token=${API_KEY}`
         );
         if (!response.ok) {
           throw new Error('Failed to fetch news data');

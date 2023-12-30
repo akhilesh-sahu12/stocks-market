@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
 import StockBarChart from './StockBarChart';
-import NewsFetcher from '../news/NewsFetcher';
 
-const STOCK_API_BASE_URL = 'https://api.iex.cloud/v1/data/core/intraday_prices'; // Replace with actual API base URL
+const STOCK_API_BASE_URL = 'https://api.iex.cloud/v1/data/core/intraday_prices'; 
 
 const StockDataFetcher = () => {
   const [symbol, setSymbol] = useState('');
   const [stocks, setStocks] = useState([]);
+  const [validSymbol, setValidSymbol]=useState(false);
 
   const handleSearch = async () => {
     try {
@@ -19,8 +19,12 @@ const StockDataFetcher = () => {
       const response = await fetch(
         `${STOCK_API_BASE_URL}/${symbol}?range=5dm&token=pk_9e697d85bc3446ba8c552b18e85ff4bc`
       );
+      if(response.ok){
+        setValidSymbol(true);
+      }
 
       if (!response.ok) {
+        setValidSymbol(false);
         throw new Error('Failed to fetch stock data');
       }
 
@@ -28,7 +32,6 @@ const StockDataFetcher = () => {
       setStocks(data);
     } catch (error) {
       console.error(error.message);
-      // Handle errors as needed
     }
   };
 
@@ -41,8 +44,7 @@ const StockDataFetcher = () => {
       />
       <Button title="Search" onPress={handleSearch} />
       {stocks.length > 0 && <StockBarChart stockData={stocks} />}
-      <NewsFetcher symbol={symbol}/>
-      {stocks.length === 0 && <Text>No stock data available</Text>}
+      {stocks.length === 0 && validSymbol && <Text>No stock data available</Text>}
     </View>
   );
 };

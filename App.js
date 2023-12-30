@@ -20,7 +20,8 @@ const App = () => {
         <Stack.Screen name="Dashboard" component={DashboardScreen}/>
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Registration" component={RegistrationScreen} />
-        <Stack.Screen name="Stocks" component={StockDataFetcher} />
+        <Stack.Screen name="Charts" component={StockDataFetcher} />
+        <Stack.Screen name="News" component={NewsFetcher}/>
       </Stack.Navigator>
     </NavigationContainer>
     </ThemeProvider>
